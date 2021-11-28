@@ -16,9 +16,10 @@ int main()
 {
     string operation;
     double value1,value2;
+    double result;
     cout<<"Please enter an operation(+,-,*,/,plus,minus,mul,div) followed by two floating-point values separated by a space: ";
-     while(cin>>operation>>value1>>value2)       {
-        double result;
+    while(cin>>operation>>value1>>value2)       {
+
         if(operation == "plus" || operation== "+") 
         result=value1+value2;
        else if(operation == "minus"|| operation== "-") 
@@ -27,16 +28,19 @@ int main()
        result=value1*value2;
        else if(operation == "div"  || operation== "/")   {
 
-        if(value2==0)
+            if(value2==0)
             {
-             cout<<"Error! Cannot divide by zero.";
+                cout<<"Error! Cannot divide by zero.";
+                continue;
             }
 
-                    else{
-                    result=value1/value2;}
-                                               }
+            else{
+                result=value1/value2;
+            }
+        }
 
         cout<<value1<<operation<<value2<<"="<<result<<endl;
-        cout<<"Please try again"; }
-        cout<<"Exit because of bad input";
+        cout<<"Please enter an operation(+,-,*,/,plus,minus,mul,div) followed by two floating-point values separated by a space: ";
+    }
+    cout<<"Exit because of bad input";
 }
